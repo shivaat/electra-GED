@@ -1,0 +1,29 @@
+{
+  "name": "electralargediscriminator multiclass exp1 test",
+  "description": "Fine tuned electra-large-discriminator model on multiclass GED, trained on FCE train.",
+  "binary_classification": false,
+  "dev_or_test": "TEST",
+  "data": {
+    "include_dev_examples": true,
+    "data_path": "./data/",
+    "train_name": "fce.train.gold.op.conll",
+    "dev_name": "fce.dev.gold.op.conll",
+    "test_name": "fce.test.gold.op.conll",
+    "binary_classification": false,
+    "tags": ["C", "M", "R", "U"],
+    "max_sentence_length": 170,
+    "do_lower_case": false
+  },
+  "model": {
+    "model_name": "electra",
+    "pretrained_model_name": "google/electra-large-discriminator"
+  },
+  "training": {
+    "batch_size": 10,
+    "num_epochs_for_warmup": 20,
+    "num_epochs": 1,
+    "learning_rate": 3e-5,
+    "save_dir": "./saved/electra_large_discriminator_multi_exp1_test",
+    "seed": 100
+  }
+}

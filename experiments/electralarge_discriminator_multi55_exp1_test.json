@@ -1,0 +1,29 @@
+{
+  "name": "electralargediscriminator multiclass55",
+  "description": "Fine tuned electra-large-discriminator model on 55-class GED, trained on FCE train & dev.",
+  "binary_classification": false,
+  "dev_or_test": "TEST",
+  "data": {
+    "include_dev_examples": false,
+    "data_path": "./data/",
+    "train_name": "fce.train.gold.all.conll",
+    "dev_name": "fce.dev.gold.all.conll",
+    "test_name": "fce.test.gold.all.conll",
+    "binary_classification": false,
+    "tags": ["M:ADV", "M:PREP", "R:OTHER", "U:PUNCT", "M:OTHER", "R:PART", "R:CONTR", "M:ADJ", "M:NOUN", "R:NOUN:NUM", "U:DET", "C", "R:NOUN:INFL", "R:PUNCT", "R:NOUN:POSS", "R:VERB:INFL", "U:PRON", "R:DET", "R:ADJ", "R:PREP", "R:ADJ:FORM", "R:VERB:SVA", "U:CONTR", "M:CONTR", "U:VERB:TENSE", "U:CONJ", "R:ORTH", "U:PREP", "U:NOUN:POSS", "R:NOUN", "M:VERB:FORM", "R:CONJ", "R:MORPH", "R:ADV", "U:VERB", "U:ADJ", "R:PRON", "R:SPELL", "U:PART", "R:VERB:FORM", "M:PUNCT", "U:VERB:FORM", "M:VERB", "M:DET", "U:NOUN", "M:VERB:TENSE", "U:ADV", "R:WO", "U:OTHER", "M:NOUN:POSS", "R:VERB:TENSE", "R:VERB", "M:CONJ", "M:PART", "M:PRON"],
+    "max_sentence_length": 170,
+    "do_lower_case": false
+  },
+  "model": {
+    "model_name": "electra",
+    "pretrained_model_name": "google/electra-large-discriminator"
+  },
+  "training": {
+    "batch_size": 10,
+    "num_epochs_for_warmup": 5,
+    "num_epochs": 1,
+    "learning_rate": 3e-5,
+    "save_dir": "./saved/electra_large_discriminator_multi55_exp1_test",
+    "seed": 100
+  }
+}
